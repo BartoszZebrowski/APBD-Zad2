@@ -5,8 +5,8 @@ namespace WebApplication1.Animals
     
     public class AnimalController : Controller
     {
-        private AnimallRepository _animallRepository;
-        public AnimalController(AnimallRepository animallRepository)
+        private AnimalRepository _animallRepository;
+        public AnimalController(AnimalRepository animallRepository)
         {
             _animallRepository = animallRepository;
         }

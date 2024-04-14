@@ -2,11 +2,11 @@
 
 namespace WebApplication1.Animals
 {
-    public class AnimallRepository
+    public class AnimalRepository
     {
         private readonly IConfiguration _configuration;
 
-        public AnimallRepository(IConfiguration configuration)
+        public AnimalRepository(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -17,7 +17,7 @@ namespace WebApplication1.Animals
 
             sqlConnection.Open();
 
-            var sqlCommand = new SqlCommand("SELECT * FROM Animals");
+            var sqlCommand = new SqlCommand("SELECT * FROM Animal");
             sqlCommand.Connection = sqlConnection;
             var response = sqlCommand.ExecuteReader();
 
