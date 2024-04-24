@@ -1,10 +1,12 @@
 using WebApplication1.Animals;
+using WebApplication1.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddScoped<AnimalRepository>();
+builder.Services.AddScoped<ErrorMiddleware>();
 
 
 builder.Services.AddControllers();
@@ -24,6 +26,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorMiddleware>();
 
 app.MapControllers();
 
